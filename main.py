@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import messagebox
 from PIL import Image, ImageDraw, ImageTk
 
-tipo_cad ="x"
 lengu=["-","0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z",]
 
 class inicio(tk.Tk):
@@ -14,10 +13,6 @@ class inicio(tk.Tk):
         self.crear_interfaz()
 
     def crear_interfaz(self):
-        self.configure(bg='black')
-
-
-        
 
         self.label = tk.Label(self, text="Pon una cadena de serie", font=('Arial', 16))
         self.label.place(x=410, y=230)
@@ -133,7 +128,7 @@ class inicio(tk.Tk):
         else:
             for i in range(2, 11):
                 if cad[4]==lengu[i]:
-                    self.label_resultado.config(text="valido")
+                    self.q_12(cad)
                     break
                 else: 
                     self.label_resultado.config(text="cadena no valido")
@@ -152,8 +147,8 @@ class inicio(tk.Tk):
         else:
             for i in range(2, 11):
                 if cad[5]==lengu[i]:
-                    #self.q_11(cad)
-                    self.label_resultado.config(text="valido")
+                    self.q_13(cad)
+                    #self.label_resultado.config(text="valido")
                     break
                 else: 
                     self.label_resultado.config(text="cadena no valido")
@@ -234,7 +229,7 @@ class inicio(tk.Tk):
         nuevo_texto_acumulado = f"{texto_actual} {nuevo_texto}"
         self.label_recorrido.config(text=nuevo_texto_acumulado)
         for i in range(1, 11):
-            if cad[5]==lengu[i]:
+            if cad[6]==lengu[i]:
                 self.q_8(cad)
                 break
             else: 
